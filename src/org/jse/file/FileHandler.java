@@ -43,9 +43,9 @@ public class FileHandler implements FileOperation {
 	}
 
 	@Override
-	public void load(String path) throws URISyntaxException {
+	public void load(String filenamepath) throws URISyntaxException {
 
-			URI uri = URI.create("file:///"+path);
+			URI uri = URI.create("file:///"+filenamepath);
 			load(uri);
 	}
 
@@ -93,6 +93,13 @@ public class FileHandler implements FileOperation {
 
 
 	@Override
+	public void savetoFile(String filenamepath) throws Exception {
+		URI uri = URI.create("file:///"+filenamepath);
+		save(uri);
+	}
+
+
+	@Override
 	public void save(URI uri) throws Exception {
 
 		BufferedOutputStream bo = new BufferedOutputStream( new FileOutputStream(new File(uri.getPath())));
@@ -121,6 +128,9 @@ public class FileHandler implements FileOperation {
 
 
 	}
+
+
+
 
 
 

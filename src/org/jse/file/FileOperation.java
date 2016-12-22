@@ -4,7 +4,7 @@ import java.net.URI;
 
 public interface FileOperation {
 
-	public void load(String path) throws Exception;
+	public void load(String filenamepath) throws Exception;
 
 	public void load(URI uri);
 
@@ -13,6 +13,8 @@ public interface FileOperation {
 	public byte[] getContent();
 
 	public void save(URI uri) throws Exception;
+
+	public void savetoFile(String filenamepath) throws Exception;
 
 
 }

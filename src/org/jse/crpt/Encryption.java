@@ -10,6 +10,8 @@ import org.jse.file.FileHandler;
 /**
  * @author thpeet
  *
+ * Encrypt data using DES algorithm and PKCS5 padding.
+ *
  */
 public class Encryption {
 

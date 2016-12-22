@@ -42,11 +42,13 @@ public class FileHandler implements FileOperation {
 		return data.size();
 	}
 
+
 	@Override
 	public void load(String filenamepath) throws URISyntaxException {
 
 			URI uri = URI.create("file:///"+filenamepath);
 			load(uri);
+
 	}
 
 

@@ -34,6 +34,11 @@ public class PublicKeyEncryption implements Encryptor{
 
 		if(fh.isLoaded()){
 
+			if(fh.size() > 117){
+				System.err.println("Source is too long max 117 bytes.");
+				System.exit(1);
+			}
+
 			System.out.println("File content loaded.");
 
 			PublicKeyEncryption encryption = new PublicKeyEncryption();

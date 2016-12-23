@@ -6,6 +6,15 @@ import java.security.MessageDigest;
 
 import javax.crypto.Cipher;
 
+/**
+ * @author thpeet
+ *
+ * Sign a message and send it to a recipient.
+ * Compute message digest and encrypt it. Send encrypted digest along with the message in clear text.
+ *
+ *
+ *
+ */
 public class DSign {
 
     public static void main(String[] args)throws Exception {

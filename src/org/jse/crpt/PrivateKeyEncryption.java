@@ -10,15 +10,15 @@ import org.jse.file.FileHandler;
 /**
  * @author thpeet
  *
- * Encrypt data using DES algorithm and PKCS5 padding.
+ * Encrypt data using private key DES algorithm and PKCS5 padding.
  *
  */
-public class Encryption {
+public class PrivateKeyEncryption implements Encryptor {
 
 	public static void main(String[] args) throws Exception {
 
 		if(args.length!=2){
-			System.err.println("Usage java EncryptionTest filetarget filedestination");
+			System.err.println("Usage java PrivateKeyEncryption filetarget filedestination");
 			System.exit(1);
 		}
 
@@ -30,7 +30,7 @@ public class Encryption {
 
 			System.out.println("File content loaded.");
 
-			Encryption encryption = new Encryption();
+			PrivateKeyEncryption encryption = new PrivateKeyEncryption();
 			byte[] encrypted = encryption.doIt( fh.getContent() );
 
 			FileHandler encryptedFile = new FileHandler(encrypted);
@@ -40,7 +40,7 @@ public class Encryption {
 
 
 
-
+	@Override
 	public byte[] doIt(final byte[] inputdata){
 
 		byte[] encryptedData = new byte[0];
